@@ -1,3 +1,18 @@
 spring:
   application:
     name: shopflow
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shop
+    username: shop
+    password: shop
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # не создаём таблицы автоматом, только проверяем
+    show-sql: true         # полезно на этапе разработки: видеть SQL в консоли
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
